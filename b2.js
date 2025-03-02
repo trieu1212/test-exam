@@ -1,20 +1,15 @@
 import readline from 'readline';
 
 const findTwoSum = (arr, target) => {
-    var result = [];
-    let map = new Map();
-    for(let i = 0; i< arr.length; i++){
-        let tmp = target - arr[i];
-        if(map.has(tmp)) {
-            for(let index of map.get(tmp)) {
-                result.push([index, i]);
-            }
+    const result = [];
+    const obj = {};
+    for(let i=0; i < arr.length; i++) {
+        const r = target - arr[i];
+        if(obj[arr[i]] && obj[arr[i]] !== i) {
+            result.push([+obj[arr[i]], +i]);
+        } else {
+            obj[r] = i;
         }
-
-        if(!map.has(arr[i])) {
-            map.set(arr[i],[]);
-        }
-        map.get(arr[i]).push(i)
     }
     return result;
 }

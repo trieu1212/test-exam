@@ -1,7 +1,7 @@
 import readline from 'readline';
 
 const check = (s) => {
-    var length = s.length;
+    let length = s.length;
     
     for(let i = 0; i < length; i++){
         if(s[i] !== s[length - 1 - i]){
