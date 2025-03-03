@@ -5,7 +5,7 @@ const findTwoSum = (arr, target) => {
     const obj = {};
     for(let i=0; i < arr.length; i++) {
         const r = target - arr[i];
-        if(obj[arr[i]] && obj[arr[i]] !== i) {
+        if(obj.hasOwnProperty(arr[i]) && obj[arr[i]] !== i) {
             result.push([+obj[arr[i]], +i]);
         } else {
             obj[r] = i;
